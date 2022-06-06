@@ -8,7 +8,7 @@ namespace GordoExpress.Models
     {
         [Key]
         public int BebidaId { get; set; }
-        [StringLenght(80, MinimumLength = 4 ErrorMessage = "O Tamanho máximo é 80 caracteres")]
+        [StringLength(80, MinimumLength = 4, ErrorMessage = "O Tamanho máximo é 80 caracteres")]
         [Required(ErrorMessage = "Informe o nome da bebida.")]
         [Display(Name = "Nome")]
         public string Nome { get; set; }
@@ -26,5 +26,6 @@ namespace GordoExpress.Models
 
         public int CategoriaId { get; set; }
         public virtual Categoria Categoria { get; set; }
+        public bool IsBebidaPreferida { get; internal set; }
     }
 }
